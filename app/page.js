@@ -5,6 +5,7 @@ import HeroSection from "../components/HeroSection";
 import ProcessSection from "../components/ProcessSection";
 import PricingSection from "../components/PricingSection";
 import ServicesSection from "../components/ServicesSection";
+import TestimonialsSection from "../components/TestimonialsSection";
 import styles from "./page.module.css";
 
 export default function HomePage() {
@@ -16,6 +17,7 @@ export default function HomePage() {
         <ServicesSection styles={styles} />
         <PricingSection styles={styles} />
         <ProcessSection styles={styles} />
+        <TestimonialsSection styles={styles} />
         <ContactSection styles={styles} />
       </main>
       <Footer styles={styles} />
