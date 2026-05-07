@@ -1,0 +1,63 @@
+:root {
+  --bg: #fff8ef;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: #fffdf9;
+  --text: #2f241e;
+  --muted: #755f55;
+  --accent: #f08a5d;
+  --accent-deep: #dd6d3f;
+  --accent-soft: #ffd9c7;
+  --leaf: #78a083;
+  --line: rgba(95, 64, 52, 0.12);
+  --shadow: 0 20px 50px rgba(125, 88, 66, 0.12);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 205, 173, 0.7), transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(255, 240, 200, 0.9), transparent 22%),
+    linear-gradient(180deg, #fff9f2 0%, #fff4e8 45%, #fff8ef 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(240, 138, 93, 0.06) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 82%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
