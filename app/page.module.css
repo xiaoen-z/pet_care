@@ -579,7 +579,9 @@
 
 .pricingGrid,
 .stepsGrid,
-.contactGrid {
+.contactGrid,
+.testimonialShell,
+.testimonialMetrics {
   display: grid;
   gap: 18px;
 }
@@ -655,6 +657,201 @@
 
 .contactGrid {
   grid-template-columns: 1fr;
+}
+
+.testimonialShell {
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  align-items: stretch;
+}
+
+.testimonialFeature,
+.testimonialPreview,
+.testimonialMetric {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.testimonialFeature {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
+  padding: 30px;
+  border-radius: 32px;
+}
+
+.testimonialGlow {
+  position: absolute;
+  top: -40px;
+  right: -30px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 217, 199, 0.95), rgba(255, 217, 199, 0));
+  pointer-events: none;
+}
+
+.testimonialTopline,
+.testimonialAuthor,
+.testimonialPreviewHead {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.testimonialBadge,
+.testimonialRating {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.testimonialBadge {
+  background: rgba(255, 217, 199, 0.72);
+  color: #9f4f2c;
+}
+
+.testimonialRating {
+  background: rgba(255, 255, 255, 0.78);
+  color: #7a563f;
+}
+
+.testimonialCard {
+  position: relative;
+  z-index: 1;
+  margin: 28px 0;
+  animation: testimonialSwap 0.55s ease;
+}
+
+.testimonialQuote {
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+}
+
+.testimonialAuthor {
+  align-items: flex-end;
+}
+
+.testimonialAuthor strong,
+.testimonialPreviewHead strong,
+.testimonialMetric strong {
+  display: block;
+}
+
+.testimonialAuthor strong {
+  font-size: 18px;
+}
+
+.testimonialAuthor span,
+.testimonialPreviewHead span,
+.testimonialPreview p,
+.testimonialMetric span {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.testimonialControls {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.testimonialDot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(159, 126, 110, 0.26);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, width 0.2s ease;
+}
+
+.testimonialDot:hover,
+.testimonialDot:focus-visible {
+  transform: translateY(-1px);
+}
+
+.testimonialDotActive {
+  width: 34px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+}
+
+.testimonialRail {
+  display: grid;
+  gap: 18px;
+}
+
+.testimonialPreviewGroup {
+  display: grid;
+  gap: 14px;
+}
+
+.testimonialPreview {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 22px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.testimonialPreview:hover,
+.testimonialPreview:focus-visible,
+.testimonialPreviewActive {
+  transform: translateY(-3px);
+  border-color: rgba(221, 109, 63, 0.26);
+  box-shadow: 0 22px 44px rgba(125, 88, 66, 0.14);
+}
+
+.testimonialPreview p {
+  display: -webkit-box;
+  margin-top: 10px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.testimonialMetrics {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.testimonialMetric {
+  padding: 22px;
+  border-radius: 24px;
+}
+
+.testimonialMetric strong {
+  margin-bottom: 8px;
+  font-size: 28px;
+  line-height: 1;
+}
+
+@keyframes testimonialSwap {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contactCard {
@@ -783,7 +980,9 @@
   .heroGrid,
   .services,
   .pricingGrid,
-  .stepsGrid {
+  .stepsGrid,
+  .testimonialShell,
+  .testimonialMetrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -812,6 +1011,8 @@
   .services,
   .pricingGrid,
   .stepsGrid,
+  .testimonialShell,
+  .testimonialMetrics,
   .highlightNote,
   .heroPoints {
     grid-template-columns: 1fr;
@@ -823,8 +1024,18 @@
 
   .heroCopy,
   .heroVisual,
-  .contactCard {
+  .contactCard,
+  .testimonialFeature {
     border-radius: 28px;
+  }
+
+  .testimonialFeature {
+    min-height: auto;
+    padding: 24px 20px;
+  }
+
+  .testimonialQuote {
+    font-size: 22px;
   }
 
   .heroCopy {
