@@ -10,6 +10,7 @@ export default function ContactSection({ styles }) {
           <p className={styles.contactIntroText}>
             支持电话、微信和到店咨询。首次到店建议提前预约，我们会根据宠物体型和护理项目预留更合适的服务时间。
           </p>
+          <p className={styles.contactIntroText}>期望到店日期：明天早晨 9:30</p>
           <div className={styles.contactList}>
             <div className={styles.contactItem}>
               <div className={`${styles.iconWrap} ${styles.contactIcon}`}>📍</div>
